@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Route from 'react-router-dom/Route';
 import Posts from './Posts';
+import Innerposts from './Innerposts';
+import Notes from './Notes';
 import firebase from 'firebase/app';
 import 'firebase/database';
 import './App.css';
@@ -38,14 +40,21 @@ class App extends Component {
                 <Route path="/" exact render={
                     () => {
                       return (<div>
-                          <Posts database={this.database} inner={0}/>
+                          <Posts database={this.database} />
                       </div>);
                     }
                 }/>
                 <Route path="/innergroup" exact render={
                     () => {
                         return (<div>
-                            <Posts database={this.database} inner={1}/>
+                            <Innerposts database={this.database} />
+                        </div>);
+                    }
+                }/>
+                <Route path="/savednotes" exact render={
+                    () => {
+                        return (<div>
+                            <Notes database={this.database} inner={1}/>
                         </div>);
                     }
                 }/>

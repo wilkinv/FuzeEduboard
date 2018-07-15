@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
 
-class Posts extends Component {
+class Innerposts extends Component {
 
     constructor(props) {
         super(props);
 
-        this.databaseRef = this.props.database.ref().child('post');
+        let curPost = 'post';
+
+        let randnum = Math.floor(Math.random() * Math.floor(3)) + 1;
+
+        curPost = curPost + randnum;
+
+        this.databaseRef = this.props.database.ref().child(curPost);
         this.databaseNotes = this.props.database.ref().child('notes');
         this.newMsg = this.newMsg.bind(this);
         this.changeCurrent = this.changeCurrent.bind(this);
         this.handleChangeText = this.handleChangeText.bind(this);
         this.saveNote = this.saveNote.bind(this);
         this.deleteMsg = this.deleteMsg.bind(this);
+        this.randnum = randnum;
+
 
         this.state = {
             posts: [],
@@ -72,18 +80,14 @@ class Posts extends Component {
     }
 
     render() {
-        /*
-        <div className="btn mx-auto d-block">
-           <button data-tag={idx} onClick={this.saveNote}>Save</button>
-        </div>
-        */
         return (
             <div>
+                <h3 align="center">You are in Group {this.randnum}</h3>
                 {this.state.posts.map((postBody, idx) => {
                     return (
                         <div>
                             <div>
-                                <div className="card msg-body">
+                                <div className="card bg-secondary msg-body">
                                     <div className="card-body msg-inner">
                                         <div>{postBody}</div>
                                         <br />
@@ -108,4 +112,4 @@ class Posts extends Component {
 
 }
 
-export default Posts;
+export default Innerposts;
