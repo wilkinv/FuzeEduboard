@@ -87,18 +87,21 @@ class Posts extends Component {
     deleteMsg(event) {
         const tag = event.currentTarget.dataset.tag;
         const key = this.state.keys[tag];
+        const username = this.state.posts[tag].username;
         const posts = this.state.posts;
         const keys = this.state.keys;
         const ids = this.state.ids;
-        posts.splice(tag, 1);
-        keys.splice(tag, 1);
-        ids.splice(tag, 1);
-        this.databaseRef.child(key).remove();
-        this.setState({
-            posts: posts,
-            keys: keys,
-            ids: ids,
-        })
+        if (this.username === username) {
+            posts.splice(tag, 1);
+            keys.splice(tag, 1);
+            ids.splice(tag, 1);
+            this.databaseRef.child(key).remove();
+            this.setState({
+                posts: posts,
+                keys: keys,
+                ids: ids,
+            })
+        }
     }
 
     render() {

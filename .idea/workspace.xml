@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dcac4789-f550-4b6f-abdd-c7ab8c1fee94" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Innerposts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Innerposts.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Notes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Notes.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Posts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Posts.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -21,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Posts.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Posts.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Posts.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="111" column="43" selection-start-line="111" selection-start-column="43" selection-end-line="111" selection-end-column="43" />
+            <state relative-caret-position="171">
+              <caret line="93" column="27" selection-start-line="93" selection-start-column="27" selection-end-line="93" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -33,17 +30,17 @@
       <file leaf-file-name="Notes.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Notes.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
+            <state relative-caret-position="945">
               <caret line="63" column="16" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Innerposts.jsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Innerposts.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Innerposts.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1332">
-              <caret line="120" column="61" selection-start-line="120" selection-start-column="61" selection-end-line="120" selection-end-column="61" />
+            <state relative-caret-position="149">
+              <caret line="101" column="27" selection-start-line="101" selection-start-column="27" selection-end-line="101" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -93,9 +90,9 @@
         <option value="$PROJECT_DIR$/src/ThreadDisplay/components/Posts.jsx" />
         <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/Notes.jsx" />
-        <option value="$PROJECT_DIR$/src/Innerposts.jsx" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/Posts.jsx" />
+        <option value="$PROJECT_DIR$/src/Innerposts.jsx" />
       </list>
     </option>
   </component>
@@ -199,8 +196,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
   </component>
@@ -216,23 +213,24 @@
       <updated>1529733790911</updated>
       <workItem from="1529733792159" duration="28907000" />
       <workItem from="1530850943438" duration="34741000" />
-      <workItem from="1531863790042" duration="20655000" />
+      <workItem from="1531863790042" duration="22784000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84303000" />
+    <option name="totallyTimeSpent" value="86432000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="25" y="38" width="1356" height="689" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49394673" visible="true" weight="0.23230088" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3284553" />
-      <window_info id="npm" order="2" sideWeight="0.50605327" side_tool="true" visible="true" weight="0.23230088" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3284553" />
+      <window_info active="true" id="npm" order="2" sideWeight="0.50605327" side_tool="true" visible="true" weight="0.23230088" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3284553" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -365,13 +363,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Innerposts.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1332">
-          <caret line="120" column="61" selection-start-line="120" selection-start-column="61" selection-end-line="120" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -384,15 +375,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Notes.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
+        <state relative-caret-position="945">
           <caret line="63" column="16" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Posts.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="111" column="43" selection-start-line="111" selection-start-column="43" selection-end-line="111" selection-end-column="43" />
+        <state relative-caret-position="171">
+          <caret line="93" column="27" selection-start-line="93" selection-start-column="27" selection-end-line="93" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Innerposts.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="101" column="27" selection-start-line="101" selection-start-column="27" selection-end-line="101" selection-end-column="27" />
         </state>
       </provider>
     </entry>
