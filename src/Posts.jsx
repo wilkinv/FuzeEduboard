@@ -13,6 +13,7 @@ class Posts extends Component {
         this.handleChangeText = this.handleChangeText.bind(this);
         this.saveNote = this.saveNote.bind(this);
         this.deleteMsg = this.deleteMsg.bind(this);
+        this.checkAbleDelete = this.checkAbleDelete.bind(this);
 
         this.state = {
             posts: [],
@@ -104,6 +105,10 @@ class Posts extends Component {
         }
     }
 
+    checkAbleDelete(username) {
+        return username === this.username;
+    }
+
     render() {
         /*
         <div className="btn mx-auto d-block">
@@ -114,6 +119,24 @@ class Posts extends Component {
             <div>
                 <h3 align="center">Welcome {this.username}</h3>
                 {this.state.posts.map((postBody, idx) => {
+                    if (this.checkAbleDelete(postBody.username))
+                        return (
+                            <div>
+                                <div>
+                                    <div className="card msg-body">
+                                        <div className="card-body msg-inner">
+                                            <div>{postBody.postBody}</div>
+                                            <br />
+                                            <button className="button" data-tag={idx} onClick={this.saveNote}>Save</button>
+                                            <button className="button" data-tag={idx} onClick={this.deleteMsg}>Delete</button>
+                                        </div>
+                                        <div className="card-footer">
+                                            <div>By: {postBody.username}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        );
                     return (
                         <div>
                             <div>
@@ -122,7 +145,6 @@ class Posts extends Component {
                                         <div>{postBody.postBody}</div>
                                         <br />
                                         <button className="button" data-tag={idx} onClick={this.saveNote}>Save</button>
-                                        <button className="button" data-tag={idx} onClick={this.deleteMsg}>Delete</button>
                                     </div>
                                     <div className="card-footer">
                                         <div>By: {postBody.username}</div>
