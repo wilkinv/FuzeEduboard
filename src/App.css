@@ -22,6 +22,22 @@ li a:hover:not(.active) {
     background-color: #111;
 }
 
+.wrapper {
+    text-align: center;
+}
+
+.loginHeading {
+    margin-top: 6em;
+}
+
+.loginButton {
+    margin-top: 2em;
+}
+
+.loginText {
+    margin-top: 1em;
+}
+
 .button {
     padding: 4px 15px;
     font-size: 12px;

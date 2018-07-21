@@ -24,47 +24,88 @@ class App extends Component {
 
       this.app = firebase.initializeApp(config);
       this.database = this.app.database();
+      this.login = this.login.bind(this);
+      this.handleChangeText = this.handleChangeText.bind(this);
+
+      this.state = {
+          username: '',
+          isLoggedIn: false,
+      }
 
   }
 
+    handleChangeText(ev) {
+        this.setState({
+            username: ev.target.value
+        })
+    }
+
+  login() {
+      const username = this.state.username;
+      if (username !== '') {
+          sessionStorage.setItem('username', username);
+          this.setState({
+              isLoggedIn: true,
+          })
+      }
+  }
+
   render() {
+
+      let isLoggedIn = this.state.isLoggedIn;
+
+      if (sessionStorage.getItem('username') != null ) {
+          isLoggedIn = true;
+      }
+
+
     return (
-        <Router>
-            <div>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/innergroup">Inner Group</a></li>
-                    <li><a href="/savednotes">Saved Notes</a></li>
-                    <li><a href="/about">About</a></li>
-                </ul>
-                <Route path="/" exact render={
-                    () => {
-                      return (<div>
-                          <Posts database={this.database} />
-                      </div>);
-                    }
-                }/>
-                <Route path="/innergroup" exact render={
-                    () => {
-                        return (<div>
-                            <Innerposts database={this.database} />
-                        </div>);
-                    }
-                }/>
-                <Route path="/savednotes" exact render={
-                    () => {
-                        return (<div>
-                            <Notes database={this.database} inner={1}/>
-                        </div>);
-                    }
-                }/>
-                <Route path="/about" exact render={
-                    () => {
-                        return (<div><h1>About Page</h1></div>);
-                    }
-                }/>
-            </div>
-        </Router>
+        <div>
+            {isLoggedIn ? ( <Router>
+                <div>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/innergroup">Inner Group</a></li>
+                        <li><a href="/savednotes">Saved Notes</a></li>
+                        <li><a href="/about">About</a></li>
+                    </ul>
+                    <Route path="/" exact render={
+                        () => {
+                            return (<div>
+                                <Posts database={this.database} username={sessionStorage.getItem('username')}/>
+                            </div>);
+                        }
+                    }/>
+                    <Route path="/innergroup" exact render={
+                        () => {
+                            return (<div>
+                                <Innerposts database={this.database} username={sessionStorage.getItem('username')}/>
+                            </div>);
+                        }
+                    }/>
+                    <Route path="/savednotes" exact render={
+                        () => {
+                            return (<div>
+                                <Notes database={this.database} username={sessionStorage.getItem('username')} />
+                            </div>);
+                        }
+                    }/>
+                    <Route path="/about" exact render={
+                        () => {
+                            return (<div><h1>About Page</h1></div>);
+                        }
+                    }/>
+                </div>
+            </Router>) : (<div className="wrapper">
+                <h2 className="loginHeading">Enter your username:</h2>
+                <br />
+                <textarea className="loginText" value={this.state.username} onChange={this.handleChangeText}/>
+                <br />
+                <button className="loginButton" onClick={this.login}>Login</button>
+            </div> )}
+        </div>
+
+
     );
   }
 }

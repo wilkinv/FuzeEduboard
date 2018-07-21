@@ -29,9 +29,15 @@ class Notes extends Component {
         const notes = this.state.notes;
         const keys = this.state.keys;
         const arrayResponse = response.noteBody;
-        notes.push(arrayResponse);
+        const username = response.username;
+
+        let combo = {};
+        combo.noteBody = arrayResponse;
+        combo.username = username;
+
+        notes.push(combo);
         keys.push(key);
-        notes.map(notes => ({notes, ref: React.createRef() }));
+
         this.setState({
             notes: notes,
             keys: keys,
@@ -41,8 +47,15 @@ class Notes extends Component {
     deleteMsg(event) {
         const tag = event.currentTarget.dataset.tag;
         const key = this.state.keys[tag];
+        const notes = this.state.notes;
+        const keys = this.state.keys;
+        notes.splice(tag, 1);
+        keys.splice(tag, 1);
         this.databaseNotes.child(key).remove();
-        window.location.reload();
+        this.setState({
+            notes: notes,
+            keys: keys,
+        })
     }
 
     render() {
@@ -54,10 +67,13 @@ class Notes extends Component {
                         <div>
                             <div>
                                 <div className="card bg-info msg-body">
-                                    <div className="card-body msg-inner">
-                                        <div>{noteBody}</div>
+                                    <div className="card-body">
+                                        <div>{noteBody.noteBody}</div>
                                         <br />
                                         <button className="button" data-tag={idx} onClick={this.deleteMsg}>Delete</button>
+                                    </div>
+                                    <div className="card-footer">
+                                        <div>By: {noteBody.username}</div>
                                     </div>
                                 </div>
                             </div>

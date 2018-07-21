@@ -11,6 +11,7 @@ class Innerposts extends Component {
 
         curPost = curPost + randnum;
 
+        this.username = this.props.username;
         this.databaseRef = this.props.database.ref().child(curPost);
         this.databaseNotes = this.props.database.ref().child('notes');
         this.newMsg = this.newMsg.bind(this);
@@ -24,6 +25,7 @@ class Innerposts extends Component {
         this.state = {
             posts: [],
             keys: [],
+            ids: [],
             newPostBody: '',
         }
     }
@@ -44,8 +46,10 @@ class Innerposts extends Component {
     }
 
     newMsg() {
+        const username = this.username;
         const postBody = this.state.newPostBody;
-        const postToSave = {postBody};
+        const idNum = new Date().getTime();
+        const postToSave = {postBody, idNum, username};
         this.databaseRef.push().set(postToSave);
         this.setState({
             newPostBody: '',
@@ -54,29 +58,55 @@ class Innerposts extends Component {
 
     changeCurrent(response, key) {
         const posts = this.state.posts;
+        const ids = this.state.ids;
         const keys = this.state.keys;
         const arrayResponse = response.postBody;
-        posts.push(arrayResponse);
+        const id = response.idNum;
+        const username = response.username;
+
+        let combo = {};
+        combo.postBody = arrayResponse;
+        combo.username = username;
+
+        posts.push(combo);
         keys.push(key);
-        posts.map(post => ({post, ref: React.createRef() }));
+        ids.push(id);
         this.setState({
             posts: posts,
             keys: keys,
+            ids: ids,
         })
     }
 
     saveNote(event) {
         const tag = event.currentTarget.dataset.tag;
-        const noteBody = this.state.posts[tag];
-        const noteToSave = {noteBody};
-        this.databaseNotes.push().set(noteToSave);
+        const noteBody = this.state.posts[tag].postBody;
+        const username = this.state.posts[tag].username;
+        const idNum = this.state.ids[tag];
+        const noteToSave = {noteBody, idNum, username};
+        this.databaseNotes.orderByChild("idNum").equalTo(idNum).once("value",snapshot => {
+            const userData = snapshot.val();
+            if (!userData){
+                this.databaseNotes.push().set(noteToSave);
+            }
+        });
     }
 
     deleteMsg(event) {
         const tag = event.currentTarget.dataset.tag;
         const key = this.state.keys[tag];
+        const posts = this.state.posts;
+        const keys = this.state.keys;
+        const ids = this.state.ids;
+        posts.splice(tag, 1);
+        keys.splice(tag, 1);
+        ids.splice(tag, 1);
         this.databaseRef.child(key).remove();
-        window.location.reload();
+        this.setState({
+            posts: posts,
+            keys: keys,
+            ids: ids,
+        })
     }
 
     render() {
@@ -88,11 +118,14 @@ class Innerposts extends Component {
                         <div>
                             <div>
                                 <div className="card bg-secondary msg-body">
-                                    <div className="card-body msg-inner">
-                                        <div>{postBody}</div>
+                                    <div className="card-body">
+                                        <div>{postBody.postBody}</div>
                                         <br />
                                         <button className="button" data-tag={idx} onClick={this.saveNote}>Save</button>
                                         <button className="button" data-tag={idx} onClick={this.deleteMsg}>Delete</button>
+                                    </div>
+                                    <div className="card-footer">
+                                        <div>By: {postBody.username}</div>
                                     </div>
                                 </div>
                             </div>
