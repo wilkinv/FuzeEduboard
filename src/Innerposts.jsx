@@ -7,12 +7,12 @@ class Innerposts extends Component {
 
         let curPost = 'post';
 
-        let randnum = Math.floor(Math.random() * Math.floor(3)) + 1;
+        let randnum = this.props.groupnum;
 
         curPost = curPost + randnum;
+        this.databaseRef = this.props.database.ref().child(curPost);
 
         this.username = this.props.username;
-        this.databaseRef = this.props.database.ref().child(curPost);
         this.databaseNotes = this.props.database.ref().child('notes');
         this.newMsg = this.newMsg.bind(this);
         this.changeCurrent = this.changeCurrent.bind(this);
@@ -103,6 +103,7 @@ class Innerposts extends Component {
                 this.databaseNotes.push().set(noteToSave);
             }
         });
+        alert("Post saved!");
     }
 
     deleteMsg(event) {

@@ -95,6 +95,7 @@ class Posts extends Component {
                 this.databaseNotes.push().set(noteToSave);
             }
         });
+        alert("Post saved!");
     }
 
     deleteMsg(event) {

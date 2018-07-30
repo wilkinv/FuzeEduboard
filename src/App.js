@@ -28,6 +28,7 @@ class App extends Component {
       this.login = this.login.bind(this);
       this.logoff = this.logoff.bind(this);
       this.handleChangeText = this.handleChangeText.bind(this);
+      this.randnum = 0;
 
       this.state = {
           username: '',
@@ -35,6 +36,7 @@ class App extends Component {
       }
 
   }
+
 
     handleChangeText(ev) {
         this.setState({
@@ -44,11 +46,37 @@ class App extends Component {
 
   login() {
       const username = this.state.username;
-      if (username !== '') {
+      let usernameRegex = /^[a-zA-Z0-9]+$/;
+      let usermatch = username.match(usernameRegex);
+      if (usermatch !== null) {
+
+          let randnum = Math.floor(Math.random() * Math.floor(3)) + 1;
+
+          this.databaseGroupnum = this.database.ref().child('groupnum');
+          let groupnum = randnum;
+          const groupnumToSave = {username, groupnum};
+
+          this.databaseGroupnum.orderByChild("username").equalTo(username).once("value",snapshot => {
+              const userData = snapshot.val();
+              console.log(userData);
+              if (!userData){
+                  this.databaseGroupnum.push().set(groupnumToSave);
+                  sessionStorage.setItem('groupnum', groupnum);
+              } else {
+                  for (let property in userData) {
+                      if (userData.hasOwnProperty(property)) {
+                          sessionStorage.setItem('groupnum', userData[property].groupnum);
+                      }
+                  }
+              }
+          });
+
           sessionStorage.setItem('username', username);
           this.setState({
               isLoggedIn: true,
           })
+      } else {
+          alert("Username can only contain alphanumeric characters.");
       }
   }
 
@@ -90,7 +118,7 @@ class App extends Component {
                     <Route path="/innergroup" exact render={
                         () => {
                             return (<div>
-                                <Innerposts database={this.database} username={sessionStorage.getItem('username')}/>
+                                <Innerposts database={this.database} username={sessionStorage.getItem('username')} groupnum={sessionStorage.getItem('groupnum')}/>
                             </div>);
                         }
                     }/>
