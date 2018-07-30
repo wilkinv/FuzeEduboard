@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcac4789-f550-4b6f-abdd-c7ab8c1fee94" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Posts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Posts.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Posts.jsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Posts.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Posts.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1556">
-              <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="38" selection-end-column="5" />
+            <state relative-caret-position="144">
+              <caret line="83" column="58" lean-forward="true" selection-start-line="83" selection-start-column="58" selection-end-line="83" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -55,10 +55,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
+            <state relative-caret-position="1904">
               <caret line="112" column="71" selection-start-line="112" selection-start-column="71" selection-end-line="112" selection-end-column="71" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
@@ -100,10 +100,10 @@
         <option value="$PROJECT_DIR$/src/ThreadDisplay/components/Posts.jsx" />
         <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/Notes.jsx" />
-        <option value="$PROJECT_DIR$/src/Posts.jsx" />
         <option value="$PROJECT_DIR$/src/Innerposts.jsx" />
         <option value="$PROJECT_DIR$/src/Stats.jsx" />
         <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/Posts.jsx" />
       </list>
     </option>
   </component>
@@ -203,8 +203,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
   </component>
@@ -221,12 +221,12 @@
       <workItem from="1529733792159" duration="28907000" />
       <workItem from="1530850943438" duration="34741000" />
       <workItem from="1531863790042" duration="24705000" />
-      <workItem from="1532301582277" duration="19373000" />
+      <workItem from="1532301582277" duration="20536000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107726000" />
+    <option name="totallyTimeSpent" value="108889000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="122" y="176" width="1356" height="851" extended-state="0" />
@@ -399,13 +399,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Posts.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1556">
-          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="38" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Stats.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -432,11 +425,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
+        <state relative-caret-position="1904">
           <caret line="112" column="71" selection-start-line="112" selection-start-column="71" selection-end-line="112" selection-end-column="71" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Posts.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="83" column="58" lean-forward="true" selection-start-line="83" selection-start-column="58" selection-end-line="83" selection-end-column="58" />
         </state>
       </provider>
     </entry>

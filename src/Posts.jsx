@@ -84,19 +84,15 @@ class Posts extends Component {
                 this.databaseNotes.push().set(noteToSave);
             } else {
                 let match = false;
-                console.log(userData);
                 for (let property in userData) {
                     if (userData.hasOwnProperty(property)) {
-                        console.log(property);
-                        console.log(userData[property].usersaver);
                         if (userData[property].usersaver === this.username) {
                             match = true;
+                            this.databaseNotes.child(property).remove();
                         }
                     }
                 }
-                if (match === false) {
-                    this.databaseNotes.push().set(noteToSave);
-                }
+                this.databaseNotes.push().set(noteToSave);
             }
         });
     }
