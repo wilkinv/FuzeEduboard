@@ -172,7 +172,7 @@ class Stats extends Component {
         let chart = this.drawChart();
         return (
           <div>
-              <h3 align="center">Most Popular Topics</h3>
+              <h3 align="center">Patterns and Participation Trends</h3>
               {chart}
               <h3>Total Main Posts: {this.numposts}</h3>
               <div className="msg-poster">
