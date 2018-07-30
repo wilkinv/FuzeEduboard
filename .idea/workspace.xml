@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcac4789-f550-4b6f-abdd-c7ab8c1fee94" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Innerposts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Innerposts.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Notes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Notes.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Posts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Posts.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,7 +20,7 @@
         <entry file="file://$PROJECT_DIR$/src/Posts.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1556">
-              <caret line="34" column="4" lean-forward="true" selection-start-line="34" selection-start-column="4" selection-end-line="38" selection-end-column="5" />
+              <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="38" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -47,7 +41,7 @@
         <entry file="file://$PROJECT_DIR$/src/Notes.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="110">
-              <caret line="66" column="16" lean-forward="true" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="51" />
+              <caret line="66" column="16" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -65,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="229">
-              <caret line="112" column="95" selection-start-line="112" selection-start-column="95" selection-end-line="112" selection-end-column="95" />
+              <caret line="112" column="71" selection-start-line="112" selection-start-column="71" selection-end-line="112" selection-end-column="71" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -209,8 +203,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start" />
         <item itemvalue="npm.build" />
+        <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
   </component>
@@ -227,12 +221,12 @@
       <workItem from="1529733792159" duration="28907000" />
       <workItem from="1530850943438" duration="34741000" />
       <workItem from="1531863790042" duration="24705000" />
-      <workItem from="1532301582277" duration="18945000" />
+      <workItem from="1532301582277" duration="19373000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107298000" />
+    <option name="totallyTimeSpent" value="107726000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="122" y="176" width="1356" height="851" extended-state="0" />
@@ -408,7 +402,7 @@
     <entry file="file://$PROJECT_DIR$/src/Posts.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1556">
-          <caret line="34" column="4" lean-forward="true" selection-start-line="34" selection-start-column="4" selection-end-line="38" selection-end-column="5" />
+          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="38" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -432,14 +426,14 @@
     <entry file="file://$PROJECT_DIR$/src/Notes.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
-          <caret line="66" column="16" lean-forward="true" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="51" />
+          <caret line="66" column="16" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
-          <caret line="112" column="95" selection-start-line="112" selection-start-column="95" selection-end-line="112" selection-end-column="95" />
+          <caret line="112" column="71" selection-start-line="112" selection-start-column="71" selection-end-line="112" selection-end-column="71" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

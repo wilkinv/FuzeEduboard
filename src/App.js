@@ -110,7 +110,7 @@ class App extends Component {
                     }/>
                     <Route path="/about" exact render={
                         () => {
-                            return (<div><p>Online Discussion Forum from Educational Technology</p></div>);
+                            return (<div><p>Online Discussion Forum for Educational Technology</p></div>);
                         }
                     }/>
                 </div>
