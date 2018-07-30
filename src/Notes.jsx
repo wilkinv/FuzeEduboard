@@ -5,6 +5,7 @@ class Notes extends Component {
     constructor(props) {
         super(props);
 
+        this.username = this.props.username;
         this.databaseNotes = this.props.database.ref().child('notes');
         this.changeCurrent = this.changeCurrent.bind(this);
         this.deleteMsg = this.deleteMsg.bind(this);
@@ -21,7 +22,9 @@ class Notes extends Component {
         this.databaseNotes.on('child_added', snapshot => {
             const response = snapshot.val();
             const key = snapshot.key;
-            changeCurrent(response, key);
+            if (response.usersaver === this.username) {
+                changeCurrent(response, key);
+            }
         });
     }
 

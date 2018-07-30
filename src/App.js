@@ -4,6 +4,7 @@ import Route from 'react-router-dom/Route';
 import Posts from './Posts';
 import Innerposts from './Innerposts';
 import Notes from './Notes';
+import Stats from './Stats';
 import firebase from 'firebase/app';
 import 'firebase/database';
 import './App.css';
@@ -25,6 +26,7 @@ class App extends Component {
       this.app = firebase.initializeApp(config);
       this.database = this.app.database();
       this.login = this.login.bind(this);
+      this.logoff = this.logoff.bind(this);
       this.handleChangeText = this.handleChangeText.bind(this);
 
       this.state = {
@@ -50,11 +52,18 @@ class App extends Component {
       }
   }
 
+  logoff() {
+      sessionStorage.removeItem('username');
+      this.setState({
+          isLoggedIn: false,
+      })
+  }
+
   render() {
 
       let isLoggedIn = this.state.isLoggedIn;
 
-      if (sessionStorage.getItem('username') != null ) {
+      if (sessionStorage.getItem('username') !== null ) {
           isLoggedIn = true;
       }
 
@@ -67,7 +76,9 @@ class App extends Component {
                         <li><a href="/">Home</a></li>
                         <li><a href="/innergroup">Inner Group</a></li>
                         <li><a href="/savednotes">Saved Notes</a></li>
+                        <li><a href="/stats">Stats</a></li>
                         <li><a href="/about">About</a></li>
+                        <li><a onClick={this.logoff} href="/">Log Off</a></li>
                     </ul>
                     <Route path="/" exact render={
                         () => {
@@ -90,9 +101,16 @@ class App extends Component {
                             </div>);
                         }
                     }/>
+                    <Route path="/stats" exact render={
+                        () => {
+                            return (<div>
+                                <Stats database={this.database} />
+                            </div>);
+                        }
+                    }/>
                     <Route path="/about" exact render={
                         () => {
-                            return (<div><h1>About Page</h1></div>);
+                            return (<div><p>Online Discussion Forum from Educational Technology</p></div>);
                         }
                     }/>
                 </div>

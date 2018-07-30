@@ -84,11 +84,27 @@ class Innerposts extends Component {
         const noteBody = this.state.posts[tag].postBody;
         const username = this.state.posts[tag].username;
         const idNum = this.state.ids[tag];
-        const noteToSave = {noteBody, idNum, username};
+        const usersaver = this.username;
+        const noteToSave = {noteBody, idNum, username, usersaver};
         this.databaseNotes.orderByChild("idNum").equalTo(idNum).once("value",snapshot => {
             const userData = snapshot.val();
             if (!userData){
                 this.databaseNotes.push().set(noteToSave);
+            } else {
+                let match = false;
+                console.log(userData);
+                for (let property in userData) {
+                    if (userData.hasOwnProperty(property)) {
+                        console.log(property);
+                        console.log(userData[property].usersaver);
+                        if (userData[property].usersaver === this.username) {
+                            match = true;
+                        }
+                    }
+                }
+                if (match === false) {
+                    this.databaseNotes.push().set(noteToSave);
+                }
             }
         });
     }
